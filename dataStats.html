@@ -49,10 +49,11 @@
 <div id="A3">
 <h3>Create a function to find the mean of the quiz grades for a given penguin.</h3>
 <script>
- var answer = function(penguin)
+ var anypenguin = function(penguin)
  {
-     classroom[0].map(getGrade);
+     return d3.mean(penguin.quizes,getGrade)
  }
+ var answer= anypenguin
 report("#A3",answer)    
 </script>
 </div>
@@ -60,7 +61,7 @@ report("#A3",answer)
 <div id="A4">
 <h3>Find the mean quiz score of each penguins.  Use one line of "code"</h3>
 <script>
-var answer=d3.mean(answer)
+var answer=classroom.map(anypenguin)
 report("#A4",answer)    
 </script>
     </div>
@@ -68,7 +69,8 @@ report("#A4",answer)
 <div id="A5">
 <h3>Find the mean of all the quiz score of the class. </h3>
 <script>
-var answer="please complete";
+var all=classroom.map(anypenguin)
+var answer=d3.mean(all)
 report("#A5",answer)    
 </script>
     </div>
@@ -78,16 +80,22 @@ report("#A5",answer)
 <div id="A6">
 <h3>Create a function that takes a penguin object and returns an object that contains one attribute, the picture of that penguin</h3>
 <script>
-var answer="please complete";
+    var getPictures=function(penguin)
+    {return penguin.picture;}
+var answer=getPictures;
 report("#A6",answer)    
 </script>
     </div>
-
 <div id="A7">
 <h3>Expand your function from the last one, so that the object it returns not only has a picture attribute, but also new attribute called quizMean, which is the mean of that penguins quiz scores</h3>
 <script>
-//be sure to test your function out.
-var answer="please complete";
+ var getPictures=function(penguin)
+    {
+     var GetTwo = {
+    pic : penguin.picture,
+    quizMean: d3.mean(penguin.quizes, getGrade)};
+        return GetTwo;}//be sure to test your function out.
+var answer= getPictures
 report("#A7",answer)    
 </script>
     </div>
@@ -95,6 +103,10 @@ report("#A7",answer)
 <div id="A8">
 <h3>With one line of code, return a list of objects that contain the picture and meanQuiz grade of all penguins</h3>
 <script>
+    var getALL=function(penguin)
+    {
+        
+    }
 var answer="please complete";
 report("#A8",answer)    
 </script>
@@ -110,6 +122,7 @@ report("#A8",answer)
         <li>finalGrade</li>
     </ul>
 <script>
+    var
 var answer="please complete";
 report("#A9",answer)    
 </script>
