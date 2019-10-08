@@ -1,0 +1,69 @@
+<html>
+<head>
+     <link href="1.css" type="text/css" rel="stylesheet"/>
+<title>
+    Lab</title>
+</head>
+    <body>
+    <p>
+    A6: <pre>   var getPictures=function(penguin)
+    {return penguin.picture;}
+var answer=getPictures</pre>
+We just need to have a function to get the picture and then return it.<br><br>
+    A7: <pre> var getPictures=function(penguin)
+    {
+     var GetTwo = {
+    pic : penguin.picture,
+    quizMean: d3.mean(penguin.quizes, getGrade)};
+        return GetTwo;}</pre>
+        Basically we need to get two things, so I have a function to get the picture and the quizMean.<br><br>
+    A8: <pre>var answer=classroom.map(getPictures);</pre>
+        We just need to map the getPictures we have for A7.<br><br>
+        
+A9: <pre> var info=function(penguin)
+    {
+        var pinfo={
+    picture: penguin.picture,
+    meanQuiz: d3.mean(penguin.quizes, getGrade),
+    meanTests: d3.mean(penguin.test, getGrade),
+    meanHW: d3.mean(penguin.homework, getGrade),
+    finalGrade: penguin.final,getGrade,};
+        return pinfo;
+    }</pre>
+    It is the same, but just we need to grab a lot. <br><br>
+A10: <pre>var answer=classroom.map(info);</pre> The same as A8.<br><br>
+
+        B1:<pre>var classroomd=function(classroom)
+    {
+        var two= function(penguin)
+            {
+                var eachpenguin=
+                picture: penguin.picture,
+        finalGrade:penguin.final,getGrade,}
+                return eachpenguin;
+            };
+        return classroom.map(two);
+    }</pre>
+The thinking process is pretty similar. We need a function to return both the picture and the final grade first. And then we need to map those to have the array.<br><br>
+C1: <pre>  var firstquiz=function(classroom)
+    {
+        var first=function(penguin)
+        {
+        return penguin.quizes[0].grade;
+        }
+        return d3.mean(classroom.map(first));
+    }</pre>
+        Before returning all the first quiz grade, we have to grab the first quiz grade from each penguin. And the first quiz is quizes[0]. After that, we just have to map all of those grades we have and find the mean of this array. <br><br>
+    </p>
+D1: <pre>
+var Score=function(day)
+    {var daygrade=function(penguin)
+    {
+        return penguin.quizes[day-1].grade
+    }
+    return d3.mean(classroom.map(daygrade))
+    }
+</pre>
+    It is similar to C1, the difference is in here we need to specify the day instead of saying it is the first quiz. We can specify that by putting [day-#] within the quizes. 
+    </body>
+</html>
